@@ -29,7 +29,7 @@ class HomeScreen extends Component {
                     alignItems:'center',
                     justifyContent:'center'
                 }}>
-                    <Text>Home Screen haha</Text>
+                    <Text>Home Screen</Text>
                 </Content>
             </Container>
         );
