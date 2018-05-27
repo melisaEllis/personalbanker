@@ -36,7 +36,7 @@ class HomeScreen extends Component {
                     </Button>
                 </Left>
                 <Body>
-                    <Title>Home</Title>
+                    <Title>Home..</Title>
                 </Body>
                 <Right>
                     <Button transparent>
