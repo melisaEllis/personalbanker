@@ -8,40 +8,49 @@ import {
     Linking
 } from "react-native";
 
-import { Button, Icon } from "native-base";
+import { Button, Icon, Right, Left, Body, Title, Container, Header  } from "native-base";
 
 class FAQ extends Component {
 
     static navigationOptions = {
         drawerIcon: (
-            <Image source={require('./pblogo.png')} style={{height:24, width:24}} />
+            //<Image source={require('./pblogo.png')} style={{height:24, width:24}} />
+            <Icon name="text" />
         )
     }
 
+    // render() {
+    //   return (           
+    //     <WebView
+    //   source={{uri: 'http://personalbanker.ca/faq.html'}}
+    //   style={{marginTop: 20}}
+    // />
+    //   );
+    // }
     render() {
-      return (           
-        <WebView
-      source={{uri: 'http://personalbanker.ca/faq.html'}}
-      style={{marginTop: 20}}
-    />
+      return (
+          <Container>
+              <Header>
+                  <Left>
+                      <Button transparent>
+                      <Icon name="ios-menu" onPress={() => this.props.navigation.openDrawer()}/>
+                      </Button>
+                  </Left>
+                  <Body>
+                      <Title>FAQ</Title>
+                  </Body>
+                  <Right>
+                      <Button transparent>
+                      </Button>
+                  </Right>
+              </Header>
+              <WebView
+                  source={{uri: 'http://personalbanker.ca/faq.html'}}
+                  style={{marginTop: 20}}
+              />
+          </Container>
       );
-    }
-    /*
-    render() {
-        const uri = 'http://personalbanker.ca/faq.html';
-        return (           
-          <WebView
-            ref={(ref) => { this.webview = ref; }}
-            source={{ uri }}
-            onNavigationStateChange={(event) => {
-              if (event.url !== uri) {
-                this.webview.stopLoading();
-                Linking.openURL(event.url);
-              }
-            }}
-          />
-        );
-      }*/
+  }
 }
 
 export default FAQ;

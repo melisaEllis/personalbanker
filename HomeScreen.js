@@ -13,7 +13,8 @@ class HomeScreen extends Component {
     
     static navigationOptions = {
         drawerIcon: (
-            <Image source={require('./pblogo.png')} style={{height:24, width:24}} />
+            //<Image source={require('./pblogo.png')} style={{height:24, width:24}} />
+            <Icon name="home"/>
         )
     }
 
@@ -30,26 +31,30 @@ class HomeScreen extends Component {
         return (
             <Container>
                 <Header>
-                <Left>
-                    <Button transparent>
-                    <Icon name="ios-menu" onPress={() => this.props.navigation.openDrawer()}/>
-                    </Button>
-                </Left>
-                <Body>
-                    <Title>Home..</Title>
-                </Body>
-                <Right>
-                    <Button transparent>
-                    </Button>
-                </Right>
+                    <Left>
+                        <Button transparent>
+                        <Icon name="ios-menu" onPress={() => this.props.navigation.openDrawer()}/>
+                        </Button>
+                    </Left>
+                    <Body>
+                        <Title>Home</Title>
+                    </Body>
+                    <Right>
+                        <Button transparent>
+                        </Button>
+                    </Right>
                 </Header>
-                <Content contentContainerStyle={{
+                {/* <Content contentContainerStyle={{
                     flex:1,
                     alignItems:'center',
                     justifyContent:'center'
                 }}>
                     <Text>Home Screen</Text>
-                </Content>
+                </Content> */}
+                <WebView
+                    source={{uri: 'http://personalbanker.ca/'}}
+                    style={{marginTop: 20}}
+                />
             </Container>
         );
     }

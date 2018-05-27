@@ -8,7 +8,8 @@ import {
     WebView
   } from 'react-native';
 
-import {Icon, Button, Container, Header, Content, Left, Card, CardItem, Body, Form, Item, Input, Label} from 'native-base';
+//import {Icon, Button, Container, Header, Content, Left, Card, CardItem, Body, Form, Item, Input, Label, Right, Title, Body} from 'native-base';
+import {Icon, Button, Container, Header, Content, Left, Right, Title, Body} from 'native-base'
 import { Col, Row, Grid } from 'react-native-easy-grid';
 
   
@@ -16,18 +17,45 @@ class Contact extends Component{
 
     static navigationOptions = {
         drawerIcon: (
-            <Image source={require('./pblogo.png')} style={{height:24, width:24}} />
+            //<Image source={require('./pblogo.png')} style={{height:24, width:24}} />
+            <Icon name="phone-landscape" />
         )
     }
 
+    // render() {
+    //   return (           
+    //     <WebView
+    //   source={{uri: 'http://personalbanker.ca/contact-us.html'}}
+    //   style={{marginTop: 20}}
+    // />
+    //   );
+    // }
+
+
     render() {
-      return (           
-        <WebView
-      source={{uri: 'http://personalbanker.ca/contact-us.html'}}
-      style={{marginTop: 20}}
-    />
+      return (
+          <Container>
+              <Header>
+                  <Left>
+                      <Button transparent>
+                      <Icon name="ios-menu" onPress={() => this.props.navigation.openDrawer()}/>
+                      </Button>
+                  </Left>
+                  <Body>
+                      <Title>Contact Us</Title>
+                  </Body>
+                  <Right>
+                      <Button transparent>
+                      </Button>
+                  </Right>
+              </Header>
+              <WebView
+                  source={{uri: 'http://personalbanker.ca/contact-us.html'}}
+                  style={{marginTop: 20}}
+              />
+          </Container>
       );
-    }
+  }
 /*
     render(){
         return(
@@ -136,28 +164,28 @@ class Contact extends Component{
     }*/
 }
 
-const styles = StyleSheet.create({
-    welcome: {
-      fontSize: 50,
-      textAlign: 'center',
-      margin: 10,
-      fontWeight: 'bold',
-    },
-    instructions: {
-      fontSize: 25,
-      fontWeight: 'bold',
-      textAlign: 'left',
-      marginBottom: 5,
-      margin: 13,
-    },
-    input:{
-        width: 3,
-    },
-    paragraph: {
-        fontSize: 15,
-        textAlign: 'center',
-        margin: 10,
-    }
-  });
+// const styles = StyleSheet.create({
+//     welcome: {
+//       fontSize: 50,
+//       textAlign: 'center',
+//       margin: 10,
+//       fontWeight: 'bold',
+//     },
+//     instructions: {
+//       fontSize: 25,
+//       fontWeight: 'bold',
+//       textAlign: 'left',
+//       marginBottom: 5,
+//       margin: 13,
+//     },
+//     input:{
+//         width: 3,
+//     },
+//     paragraph: {
+//         fontSize: 15,
+//         textAlign: 'center',
+//         margin: 10,
+//     }
+//   });
 
 export default Contact;
