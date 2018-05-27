@@ -9,12 +9,17 @@ import {
 
 import {createDrawerNavigator, DrawerItems} from 'react-navigation'
 import HomeScreen from './HomeScreen'
-import SettingsScreen from './SettingsScreen'
 import AboutUs from './AboutUs'
+import Services from './Services'
+import ContactUs from './ContactUs'
+import BLOG from './BLOG'
+import SettingsScreen from './SettingsScreen'
+import FAQ from './FAQ'
 
 import {Container, Content, Header, Body, Icon} from 'native-base'
 
 import { YellowBox } from 'react-native'
+import QuestionsScreen from './test';
 YellowBox.ignoreWarnings(['Warning: isMounted(...) is deprecated'])
 
 class App extends Component{
@@ -43,11 +48,23 @@ const MyApp = createDrawerNavigator({
   Home: {
     screen: HomeScreen
   },
+  AboutUs: {
+    screen: AboutUs
+  },
+  Services:{
+   screen: Services
+  },
+  ContactUs: {
+    screen: ContactUs
+  },
+  BLOG: {
+    screen: BLOG
+  },
   Settings: {
     screen: SettingsScreen
   },
-  About:{
-   screen: AboutUs
+  FAQ: {
+    screen: FAQ
   }
 },{
   initialRouteName:'Home',

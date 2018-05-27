@@ -3,25 +3,35 @@ import {
     View,
     Text,
     StyleSheet,
-    Image
+    Image,
+    WebView
 } from "react-native";
 
-import {Icon, Button, Container, Header, Content, Left, Right} from 'native-base'
+import {Icon, Button, Container, Header, Content, Left} from 'native-base'
 
 class HomeScreen extends Component {
     
     static navigationOptions = {
         drawerIcon: (
-            <Icon name="home"/>
+            <Image source={require('./pblogo.png')} style={{height:24, width:24}} />
         )
     }
 
+    render() {
+        return (           
+          <WebView
+        source={{uri: 'http://personalbanker.ca/'}}
+        style={{marginTop: 20}}
+      />
+        );
+      }
+/*
     render() {
         return (
             <Container>
                 <Header>
                     <Left>
-                        <Icon name="ios-menu" onPress={()=>this.props.navigation.navigate('DrawerOpen')} style={{color: 'white'}}/>
+                        <Icon name="ios-menu" onPress={() => this.props.navigation.navigate('DrawerOpen')}/>
                     </Left>
                 </Header>
                 <Content contentContainerStyle={{
@@ -33,7 +43,7 @@ class HomeScreen extends Component {
                 </Content>
             </Container>
         );
-    }
+    }*/
 }
 
 export default HomeScreen;

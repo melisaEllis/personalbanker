@@ -4,34 +4,48 @@ import {
     Text,
     StyleSheet,
     Image,
-    WebView,
-    Linking
+    WebView
 } from "react-native";
-import { Button, Icon } from "native-base";
 
-class AboutUS extends Component {
+import {Icon, Button, Container, Header, Content, Left} from 'native-base'
 
+class AboutUs extends Component {
+    
     static navigationOptions = {
         drawerIcon: (
-            <Icon name="paper" style={{color: 'black'}}/>
+            <Image source={require('./pblogo.png')} style={{height:24, width:24}} />
         )
     }
 
     render() {
-        const uri = 'http://personalbanker.ca/about-us.html';
         return (           
           <WebView
-            ref={(ref) => { this.webview = ref; }}
-            source={{ uri }}
-            onNavigationStateChange={(event) => {
-              if (event.url !== uri) {
-                this.webview.stopLoading();
-                Linking.openURL(event.url);
-              }
-            }}
-          />
+        source={{uri: 'http://personalbanker.ca/about-us.html'}}
+        style={{marginTop: 20}}
+      />
         );
       }
+
+      /*
+
+    render() {
+        return (
+            <Container>
+                <Header>
+                    <Left>
+                        <Icon name="ios-menu" onPress={() => this.props.navigation.navigate('DrawerOpen')}/>
+                    </Left>
+                </Header>
+                <Content contentContainerStyle={{
+                    flex:1,
+                    alignItems:'center',
+                    justifyContent:'center'
+                }}>
+                    <Text>Home Screen</Text>
+                </Content>
+            </Container>
+        );
+    }*/
 }
 
-export default AboutUS;
+export default AboutUs;
