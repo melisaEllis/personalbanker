@@ -19,7 +19,6 @@ import FAQ from './FAQ'
 import {Container, Content, Header, Body, Icon} from 'native-base'
 
 import { YellowBox } from 'react-native'
-import QuestionsScreen from './test';
 YellowBox.ignoreWarnings(['Warning: isMounted(...) is deprecated'])
 
 class App extends Component{

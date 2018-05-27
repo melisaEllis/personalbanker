@@ -7,7 +7,7 @@ import {
     WebView
 } from "react-native";
 
-import {Icon, Button, Container, Header, Content, Left} from 'native-base'
+import {Icon, Button, Container, Header, Content, Left, Title, Body, Right} from 'native-base'
 
 class HomeScreen extends Component {
     
@@ -17,22 +17,31 @@ class HomeScreen extends Component {
         )
     }
 
-    render() {
+   /* render() {
         return (           
           <WebView
         source={{uri: 'http://personalbanker.ca/'}}
         style={{marginTop: 20}}
       />
         );
-      }
-/*
+      }*/
+
     render() {
         return (
             <Container>
                 <Header>
-                    <Left>
-                        <Icon name="ios-menu" onPress={() => this.props.navigation.navigate('DrawerOpen')}/>
-                    </Left>
+                <Left>
+                    <Button transparent>
+                    <Icon name="ios-menu" onPress={() => this.props.navigation.openDrawer()}/>
+                    </Button>
+                </Left>
+                <Body>
+                    <Title>Home</Title>
+                </Body>
+                <Right>
+                    <Button transparent>
+                    </Button>
+                </Right>
                 </Header>
                 <Content contentContainerStyle={{
                     flex:1,
@@ -43,7 +52,7 @@ class HomeScreen extends Component {
                 </Content>
             </Container>
         );
-    }*/
+    }
 }
 
 export default HomeScreen;
