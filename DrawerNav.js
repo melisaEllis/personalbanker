@@ -19,6 +19,7 @@ import ContactUs from './ContactUs'
 import BLOG from './BLOG'
 import SettingsScreen from './SettingsScreen'
 import FAQ from './FAQ'
+import ProfileScreen from './ProfileScreen'
 
 import { YellowBox } from 'react-native'
 YellowBox.ignoreWarnings(['Warning: isMounted(...) is deprecated'])
@@ -58,6 +59,9 @@ const DrawerNav = createDrawerNavigator({
     },
     FAQ: {
       screen: FAQ
+    },
+    Profile: {
+      screen: ProfileScreen
     }
   },
   {
