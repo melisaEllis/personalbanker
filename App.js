@@ -1,26 +1,27 @@
+
 import React, { Component } from 'react';
+
 import {
+  Platform,
   StyleSheet,
   Text,
   View,
+  StatusBar,
   Image,
   Linking
-} from "react-native";
+} from 'react-native';
 
-import {createDrawerNavigator, DrawerItems} from 'react-navigation'
-import HomeScreen from './HomeScreen'
-import AboutUs from './AboutUs'
-import Services from './Services'
-import ContactUs from './ContactUs'
-import BLOG from './BLOG'
-import SettingsScreen from './SettingsScreen'
-import FAQ from './FAQ'
+import StackNav from './StackNav';
 
-import {Container, Content, Header, Body, Icon} from 'native-base'
+export default class App extends Component {
+  render() {
+    return (
+      <StackNav />
+    );
+  }
+}
 
-import { YellowBox } from 'react-native'
-YellowBox.ignoreWarnings(['Warning: isMounted(...) is deprecated'])
-
+/*
 class App extends Component{
   render() {
     return(
@@ -28,61 +29,4 @@ class App extends Component{
     );
   }
 }
-
-const CustomDrawerContentComponent = (props) =>(
-  <Container>
-    <Header style={{height: 150, backgroundColor: '#330066'}}>
-      <Body>
-        <Image source={require('./pblogo.png')}/>
-      </Body>
-    </Header>
-    <Content>
-      <DrawerItems {...props}/>
-    </Content>
-  </Container>
-)
-
-const MyApp = createDrawerNavigator({
-
-  Home: {
-    screen: HomeScreen
-  },
-  AboutUs: {
-    screen: AboutUs
-  },
-  Services:{
-   screen: Services
-  },
-  ContactUs: {
-    screen: ContactUs
-  },
-  BLOG: {
-    screen: BLOG
-  },
-  Settings: {
-    screen: SettingsScreen
-  },
-  FAQ: {
-    screen: FAQ
-  }
-},{
-  initialRouteName:'Home',
-  drawerPosition: 'left',
-  contentComponent: CustomDrawerContentComponent,
-  drawerOpenRoute: 'DrawerOpen',
-  drawerCloseRoute: 'DrawerClose',
-  drawerToggleRoute: 'DrawerToggle'
-})
-
-export default App;
-
-styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center'
-  },
-  drawerImage:{
-  
-  }
-})
+*/
