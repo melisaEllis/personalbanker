@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Container, Header, Tab, Tabs, TabHeading, Icon, Text } from 'native-base';
+import { Image, View } from 'react-native';
+import { Container, Header, Tab, Tabs, TabHeading, Icon, Text, Left, Right, Body, Button, Title, Segment } from 'native-base';
 import Tab1 from './Profile1'
 import Tab2 from './Profile2'
 import Tab3 from './Profile3'
@@ -9,9 +10,36 @@ export default class ProfileScreen extends Component{
   render() {
     return (
         <Container>
-        <Header hasTabs />
-        <Tabs initialPage={0}>
-        <Tab heading="Part 1">
+        <Header hasSegment hasTabs style={{backgroundColor: '#3A1F64', borderBottomColor: 'white', borderBottomWidth : 1}}>
+          <Left>
+            <Button transparent>
+              <Icon name="ios-menu"  onPress={() => this.props.navigation.openDrawer()} />
+            </Button>
+          </Left>
+          <Body>
+            <View style={{flexDirection:'row', flexWrap:'wrap'}}>
+              <Image
+                  style={{width: 25, height: 23 , borderRadius: 15, marginRight: 20}}
+                  source={{uri:'https://facebook.github.io/react-native/docs/assets/favicon.png'}} />
+              <Text style={{color: 'white'}}>
+                  {"Username"}
+              </Text>
+          </View>
+          </Body>
+          <Right>
+            <Button transparent>
+              <Icon name='ios-calendar' />
+            </Button>
+            <Button transparent>
+              <Icon name='ios-notifications' />
+            </Button>
+            <Button transparent>
+              <Icon name='ios-mail-open' />
+            </Button>
+          </Right>
+        </Header>
+        <Tabs initialPage={0} style={{backgroundColor: '#3A1F64'}}>
+        <Tab heading="Profile">
             <Tab1 />
           </Tab>
           <Tab heading="Part 2">
